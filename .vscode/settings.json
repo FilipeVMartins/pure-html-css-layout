@@ -4,5 +4,8 @@
     },
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "eslint.validate": ["javascript", "html", "css"]
+    "eslint.validate": ["javascript", "html"],
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }
