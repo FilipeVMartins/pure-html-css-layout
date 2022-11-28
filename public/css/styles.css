@@ -3,7 +3,14 @@ html {
 }
 
 html,
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +18,22 @@ body {
 
 figure {
     margin: 0;
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+    line-height: 1.3rem;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .page-wrapper {
@@ -32,6 +55,7 @@ figure {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
 }
 
 .nav-bar-menu {
@@ -63,6 +87,9 @@ figure {
     border-radius: 100px;
     outline: unset;
     border: none;
+    height: 1.5rem;
+    width: 14rem;
+    font-size: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -72,8 +99,8 @@ figure {
 }
 
 .header-logo {
-    height: 3.2rem;
-    width: 3.2rem;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 
 .weather {
@@ -214,7 +241,7 @@ figure {
     color: #b8023f;
 }
 
-.hero-highlight article {
+.hero-highlight > article.highlight-article {
     width: 50%;
     height: 26.3076vw;
     background-color: #b8023f;
@@ -228,6 +255,14 @@ figure {
     top: 0; */
 }
 
+.hero-highlight article h4 {
+    padding: 1rem 0;
+}
+
+.hero-highlight article h2 {
+    padding-bottom: 1rem;
+}
+
 .hero-highlight figure {
     width: 75%;
     height: 32vw;
@@ -236,12 +271,27 @@ figure {
     left: 0;
 }
 
-.hero-highlight img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.7rem;
-    object-fit: cover;
-    object-position: center center;
+.pagination {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2.5rem;
+}
+
+.pagination div {
+    width: 3rem;
+    border: 1px solid #e8e8e878;
+    cursor: pointer;
+    transition: all 0.5 linear;
+}
+
+.pagination div:hover {
+    border-color: #4a4a4a;
+}
+
+.pagination .active-slide {
+    border-color: #ffffff;
 }
 
 .hero-aside {
@@ -284,6 +334,352 @@ figure {
 }
 /* end hero */
 
+.page-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+
+.articles-group {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.main-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+}
+
+.side-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40%;
+}
+
+article.highlight-article {
+    cursor: default;
+}
+
+article:not(.highlight-article) {
+    transition: all 0.5s linear;
+    cursor: pointer;
+    border-radius: 0.7rem;
+}
+
+article:hover:not(.highlight-article) {
+    background-color: #bfbfbf;
+    opacity: 0.7;
+}
+
+/* start main news */
+.main-news {
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: 0.7rem;
+}
+
+.main-news article {
+    display: flex;
+    gap: 1rem;
+}
+
+.main-news article figure {
+    width: 40%;
+    height: 12rem;
+}
+
+.main-news article div {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.main-news article > div > * {
+    padding: 0;
+    margin: 0;
+}
+
+.main-news article > div > h5 {
+    margin-bottom: 0.5rem;
+}
+
+article .entertaiment-news-title {
+    color: #a841ca;
+}
+
+article .sports-news-title {
+    color: #62c68c;
+}
+
+article .tvfame-news-title {
+    color: #9ab4c6;
+}
+article .economy-news-title {
+    color: #f7be6f;
+}
+
+.main-news article > div > span {
+    justify-self: flex-end;
+    color: #afafaf;
+    position: absolute;
+    bottom: 0.7rem;
+}
+/* end main-news */
+
+/* start carousel */
+.carousel {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel article {
+    display: flex;
+    flex-direction: column;
+    background-color: #5e94b6;
+    color: #ffffff;
+    border-radius: 0.7rem;
+    padding-bottom: 4rem;
+}
+
+.carousel > article > figure {
+    height: 22rem;
+}
+
+.carousel > article > figure > img {
+    border-radius: 0.7rem 0.7rem 0rem 0rem;
+}
+
+.carousel > article > div {
+    padding: 2rem;
+    border-radius: 0.7rem;
+}
+
+.carousel > article > div > h5 {
+    margin-bottom: 1rem;
+}
+/* end carousel */
+
+/* start side news */
+.side-news {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.side-news article {
+    background-color: #ffffff;
+    border-radius: 0.7rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.side-news article div {
+    width: 60%;
+}
+
+.side-news article figure {
+    width: 40%;
+}
+/* end side news */
+
+/* start highlight-videos */
+.highlight-videos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 5rem; */
+}
+
+.highlight-videos h2 {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #646464;
+    line-height: 0.1em;
+    margin: 1rem 0 3rem;
+}
+
+.highlight-videos h2 span {
+    background: #f2f2f2;
+    padding-right: 1rem;
+    color: #646464;
+}
+
+.videos-articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.videos-articles article {
+    background-color: #ffffff;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    flex: 1 1 0;
+    width: 0;
+}
+
+.videos-articles article:hover {
+    background-color: #bfbfbf;
+    opacity: 0.7;
+}
+
+.videos-articles article figure {
+    position: relative;
+}
+
+.videos-articles article figure span {
+    position: absolute;
+    border-radius: 20rem;
+    color: #ffffff;
+    right: 1rem;
+    top: 1rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.entertaiment-background-color {
+    background-color: #a841ca;
+}
+
+.sports-background-color {
+    background-color: #62c68c;
+}
+
+.tvfame-background-color {
+    background-color: #9ab4c6;
+}
+
+.economy-background-color {
+    background-color: #f7be6f;
+}
+
+.videos-articles article figure i {
+    position: absolute;
+    font-size: 3rem;
+    bottom: -1.5rem;
+    left: 1rem;
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+
+.videos-articles article img {
+    border-radius: 0.7rem 0.7rem 0 0;
+}
+
+.videos-articles article div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    text-align: left;
+}
+/* end highlight-videos */
+
+/* start aside musics */
+.side-musics {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.side-musics article {
+    width: calc(50% - 0.5rem);
+    position: relative;
+    height: 20rem;
+}
+
+.side-musics article:nth-child(3) {
+    width: 100%;
+}
+
+.side-musics figure {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7;
+}
+
+.side-musics div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #ffffff;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 10;
+    font-size: 1rem;
+    background-color: transparent;
+    width: 100%;
+    word-wrap: break-word;
+    max-width: calc(100% - 3rem);
+}
+
+/* end aside musics */
+
+/* start others */
+.others {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    height: 32rem;
+}
+
+.others > * {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 0.7rem;
+}
+
+.others .horoscope {
+    width: 100%;
+}
+
+.others .stockmarket {
+    width: calc(50% - 0.5rem);
+}
+
+.others .lotery {
+    width: calc(50% - 0.5rem);
+}
+/* end others */
+
 /* footer */
 .page-footer {
     background-color: #4a4a4a;
@@ -295,9 +691,10 @@ figure {
     padding: 1.5rem;
     font-size: 0.9rem;
     color: #ffffff;
+    box-sizing: border-box;
 }
 .footer-logo {
-    height: 3.2rem;
-    width: 3.2rem;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 /* end footer */
